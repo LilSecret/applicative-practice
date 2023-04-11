@@ -5,10 +5,20 @@ import { data } from "../data/data";
 // Return example: 'Planet Name'
 
 export function findPlanetNameByMoon(data, moonName) {
-  // Your code goes here...
+  const planetWithMoon = data.planets
+    .filter((planet) => {
+      if (planet.hasOwnProperty('moons')) {
+        for (let moon of planet.moons) {
+          if (moon === moonName) {
+            return planet
+          }
+        }
+      }
+    })
+    .map((planet) => planet.name);
+
+  return planetWithMoon.toString();
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-8"
