@@ -6,7 +6,22 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function lowMoonsPlanets(data) {
-  // Your code goes here...
+  const planetsUnder10Moons = data.planets
+    .filter((planet) => {
+      if (planet.hasOwnProperty('moons')) {
+        if (planet.moons.length < 10) {
+          return planet;
+        }
+      }
+      if (!planet.hasOwnProperty('moons')) {
+        return planet;
+      }
+    })
+    .map((planet) => {
+      return planet.name;
+    });
+  
+  return planetsUnder10Moons;
 }
 
 // === TEST YOURSELF ===
