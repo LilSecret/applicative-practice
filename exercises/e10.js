@@ -5,7 +5,14 @@ import { data } from "../data/data";
 // Return example: { key1: value1, key2: value2, ... , keyN: valueN }
 
 export function getAsteroidDataByName(data, asteroidName) {
-  // Your code goes here...
+  const namedAstroid = data.asteroids
+    .filter((asteroid) => {
+      if(asteroid.name === asteroidName) {
+        return asteroid;
+      }
+    });
+
+  return namedAstroid[0]
 }
 
 
