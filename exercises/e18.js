@@ -6,9 +6,6 @@ import { maxBy } from "../exercises/e17";
  */
 
 export function getGreatestDiscoveryYear(data) {
-  // Your code goes here...
-  // I didn't know how to get the amount of times an asteroid was discovered in the years
-  // but I found a video that should me how to get the the most common item in an array
   let asteroidYears = [];
   for (let asteroid of data.asteroids) {
     asteroidYears.push(asteroid.discoveryYear);

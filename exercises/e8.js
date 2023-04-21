@@ -5,19 +5,9 @@ import { data } from "../data/data";
 // Return example: 'Planet Name'
 
 export function findPlanetNameByMoon(data, moonName) {
-  const planetWithMoon = data.planets
-    .filter((planet) => {
-      if (planet.hasOwnProperty('moons')) {
-        for (let moon of planet.moons) {
-          if (moon === moonName) {
-            return planet
-          }
-        }
-      }
-    })
-    .map((planet) => planet.name);
-
-  return planetWithMoon.toString();
+  return data.planets
+    .filter((planet) => planet.moons)
+    .find((planet) => planet.moons.includes(moonName)).name;
 }
 
 // === TEST YOURSELF ===

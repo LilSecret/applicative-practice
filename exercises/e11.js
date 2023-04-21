@@ -6,7 +6,7 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function lowMoonsPlanets(data) {
-  const planetsUnder10Moons = data.planets
+  return data.planets
     .filter((planet) => {
       if (planet.hasOwnProperty('moons')) {
         if (planet.moons.length < 10) {
@@ -20,8 +20,6 @@ export function lowMoonsPlanets(data) {
     .map((planet) => {
       return planet.name;
     });
-  
-  return planetsUnder10Moons;
 }
 
 // === TEST YOURSELF ===

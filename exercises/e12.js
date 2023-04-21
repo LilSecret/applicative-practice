@@ -5,20 +5,10 @@ import { data } from "../data/data";
 // Return example: 42
 
 export function allPlanetsMoonsCount(data) {
-  const totalMoons = data.planets
-    .filter((planet) => {
-      if (planet.hasOwnProperty('moons')) {
-        return planet
-      }
-    })
-    .map((planet) => {
-      return planet.moons.length;
-    })
-    .reduce((acc, val) => {
-      return acc += val;
-    });
-
-  return totalMoons
+  return data.planets
+    .filter((planet) => planet.moons)
+    .map((planet) => planet.moons.length)
+    .reduce((acc, val) => acc += val);
 }
 
 
